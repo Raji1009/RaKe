@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine 💌</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffe6ec, #fff);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.gallery img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.yes:hover {
+  background: #ff1f4d;
+}
+
+.no {
+  background: #ddd;
+}
+
+.flowers span {
+  position: absolute;
+  font-size: 22px;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>Hey Boyfriend🌸</h1>
+
+  <p>
+    With you, I love myself a little more—<br>
+    soft and strong in ways I never knew.<br>
+You turn my chaos into quiet peace,<br>
+your arms my safest place, my truest home.<br>
+Even when you’re gone, I carry you with me,<br>
+choosing you—every single day, always.
+  </p>
+
+  <div class="gallery">
+    <img src="pic1.png">
+    <img src="pic2.png">
+    <img src="pic3.png">
+  </div>
+
+  <p>
+    So.... Mr. Keerthivasan Rajalakshmi, I love you to infinity times the universe size
+  </p>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <button class="yes" onclick="yesClicked()">YES 💕</button>
+  <button class="no" onclick="noClicked()">No 🙃</button>
+</div>
+
+<div class="flowers" id="flowers"></div>
+
+<script>
+function yesClicked() {
+  document.getElementById("card").innerHTML = `
+    <h1>Good Choice!! you should better choose me illana setha mavaneyy!💘</h1>
+    <p>
+        i will always be yours and will always make you feel super awsm super orgasm baby
+    </p>
+  `;
+}
+
+function noClicked() {
+  alert("That button is just for decoration 😌 Try again.");
+}
+
+const emojis = ["🌸","🌷","🌹","💐","🌺"];
+const container = document.getElementById("flowers");
+
+setInterval(() => {
+  const flower = document.createElement("span");
+  flower.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  container.appendChild(flower);
+  setTimeout(() => flower.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
